@@ -21,7 +21,9 @@
         "typescript": "^5.0.4"
     },
     "devDependencies": {},
-    "scripts": {},
+    "scripts": {
+        "build:core": "pnpm -F comlink-adapters build"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/kinglisky/comlink-adapters.git"

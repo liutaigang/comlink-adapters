@@ -1,0 +1,98 @@
+{
+  "name": "extension",
+  "displayName": "vscode-webview-extension-example",
+  "version": "1.0.1",
+  "publisher": "liutaigang",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:liutaigang/vscode-webview-extension-example.git"
+  },
+  "keywords": [
+    "webview",
+    "extension",
+    "example"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension/extension.js",
+  "scripts": {
+    "clear": "rimraf ./out && rimraf ./node_modules",
+    "watch:ext": "rimraf ./out/extension && tsc -watch -p ./tsconfig.extension.json",
+    "watch:web": "rimraf ./out/webview && vite build --watch",
+    "build:web": "tsc -p ./tsconfig.webview.json && vite build",
+    "lint:web": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "package:ext": "pnpm vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@jsonrpc-rx/client": "^0.2.1",
+    "@jsonrpc-rx/server": "^0.2.1",
+    "@examples/test-case": "workspace:*",
+    "html-modifier": "^1.2.0",
+    "path-browserify": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "comlink": "^4.4.1",
+    "comlink-adapters": "workspace:*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/path-browserify": "^1.0.2",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/vscode": "^1.83.2",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "@vscode/test-electron": "^2.3.4",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.47.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "extension": "workspace:^",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.7",
+    "rollup": "^4.9.5",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "panel-view-container.show",
+        "title": "Panel View",
+        "category": "vscode-webview-example"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "sidebar-view",
+          "title": "sidebar view example",
+          "icon": "assets/icon01.svg"
+        }
+      ]
+    },
+    "views": {
+      "sidebar-view": [
+        {
+          "id": "sidebar-view-container",
+          "type": "webview",
+          "name": "sidebar view"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "esnext",
+        "lib": ["ES2020"],
+        "moduleResolution": "node",
+        "paths": {
+            "tslib": ["./node_modules/tslib/tslib.d.ts"]
+        },
+        "outDir": "out/extension"
+    },
+    "include": ["./src/"],
+    "exclude": ["out/", "./src/__test__", "./src/webview/", "node_modules/"]
+}

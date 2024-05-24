@@ -47,6 +47,7 @@
         "@figma/plugin-typings": "^1.63.0",
         "@types/chrome": "^0.0.237",
         "@types/node": "^20.8.10",
+        "@types/vscode": "^1.89.0",
         "@types/ws": "^8.5.10",
         "comlink": "^4.4.1",
         "electron": "^23.1.1",

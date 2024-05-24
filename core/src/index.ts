@@ -5,3 +5,4 @@ export * from './chrome-extensions-adapters';
 export * from './socket-io-adapters';
 export * from './web-socket-adapters';
 export * from './node-adapters';
+export * from './vscode-extensions-adapters';
